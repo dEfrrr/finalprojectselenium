@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pwCUmyMu8rH5ySjL6cXkMP8r5EupG7LcDNSWYFmadexfqDa3OxyGTPKtkjmSFXi4b6MtncSaE4d/Rt0eOCeP7g==",
+  "dgSpecHash": "HMr2eWSXK4qHL92ICKBk+gCqwz8SNh0377t0P6eSk1vBp0AqlwBjwTtWavsfLjWGqsi4ny0fKAwLfgbc2bs+uQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\dimit\\Desktop\\FinalWorkSeleniumDIMITAREFREMOVSKI\\HomeworkBrainster\\HomeworkBrainster\\HomeworkBrainsterTest.csproj",
+  "projectFilePath": "C:\\Users\\dimit\\Desktop\\FinalWorkSeleniumDIMITAREFREMOVSKI111\\FinalWorkSeleniumDIMITAREFREMOVSKI\\HomeworkBrainster\\HomeworkBrainster\\HomeworkBrainsterTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dimit\\.nuget\\packages\\dotnetseleniumextras.waithelpers\\3.11.0\\dotnetseleniumextras.waithelpers.3.11.0.nupkg.sha512",
     "C:\\Users\\dimit\\.nuget\\packages\\microsoft.codecoverage\\17.9.0\\microsoft.codecoverage.17.9.0.nupkg.sha512",
