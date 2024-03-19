@@ -1,0 +1,73 @@
+﻿using NUnit.Framework;
+using NUnit.Framework.Legacy;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Internal;
+using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
+
+namespace HomeworkBrainster
+{
+    [TestFixture]
+    public class HomeworkBrainster
+    {
+        public void SendKeysById(string id, string text)
+        {
+            driver.FindElement(By.Id(id)).SendKeys(text);
+        }
+
+        IWebDriver driver = new ChromeDriver();
+
+        [SetUp]
+        public void Setup()
+        {
+            driver.Manage().Window.Maximize();
+        }
+
+        [Test]
+        public void Test1()
+        {
+            driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+
+            driver.Navigate().GoToUrl("https://qainterrapt.brainster.xyz/login");
+            SendKeysById("email" , "dimitarefremovski1@gmail.com");
+            SendKeysById("password", "password123");
+            IWebElement loginButton = driver.FindElement(By.CssSelector("[type = 'submit']"));
+            loginButton.Click();
+            ClassicAssert.AreEqual("https://qainterrapt.brainster.xyz/dashboard", driver.Url);
+        }
+
+        [Test]
+        public void Test2()
+        {
+            driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+
+
+            driver.Navigate().GoToUrl("https://www.amazon.com/books-used-books-textbooks/b?ie=UTF8&node=283155");
+            IWebElement searchBtn = driver.FindElement(By.Id("twotabsearchtextbox"));
+            searchBtn.SendKeys("Harry Potter" + Keys.Enter);
+            wait.Timeout = TimeSpan.FromSeconds(2);
+            IWebElement story = wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("[alt='Toys & Games']")));
+            story.Click();
+            
+        }
+
+        [Test]
+        public void Test3()
+        {
+            driver.Navigate().GoToUrl("https://www.google.com/");
+            IWebElement searchBtn = driver.FindElement(By.CssSelector("[title = 'Search']"));
+            searchBtn.SendKeys("Oasis - Wonderwall");
+        }
+
+
+        [TearDown] 
+        public void Teardown()
+        {
+            driver.Quit();
+            driver.Dispose();
+        }
+    }
+}
